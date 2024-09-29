@@ -45,7 +45,7 @@ def main():
     pygame.init()
 
     # 创建环境实例
-    env = BaitEnvPygame(level=0, render=False)
+    env = BaitEnvPygame(level=1, render=False)
 
     # 获取初始渲染的图像
     grid_image = env.do_render()

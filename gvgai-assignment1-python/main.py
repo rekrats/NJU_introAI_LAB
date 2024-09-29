@@ -11,17 +11,18 @@ from controllers.MCTS import MCTSAgent
 if __name__ == "__main__":
     
     print("Game start!")
-    level = 0
+    level = 1
     env = BaitEnv(level=level, render=False)
     
     # actions: 0 noop, 1 left, 2 right, 3 down, 4 up
     
-    mode = "random" # "play", "random", "depthfirst", "limitdepthfirst", "Astar", "MCTS"
+    mode = "depthfirst" # "play", "random", "depthfirst", "limitdepthfirst", "Astar", "MCTS"
     action_lst = None
     if mode == "play":
         # input your own actions here
         tick_max = 30
-        action_lst = [3, 2, 3, 1, 3, 4, 4, 4, 1, 0]
+        # action_lst = [3, 2, 3, 1, 3, 4, 4, 4, 1, 0]
+        action_lst =  [3, 2, 2, 2, 4, 2, 2, 3, 1, 1, 1, 1, 4, 4, 1, 1, 3, 3, 2, 2, 4, 4, 1, 1, 3, 3, 1, 1, 4, 1, 1, 3, 2, 2, 2, 2, 4, 4, 2, 2, 3, 3, 2, 2, 1, 1, 4, 1, 3, 2, 2, 2, 4, 2, 2, 3, 1, 1, 1, 1, 4, 1, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4]
     elif mode == "random":
         tick_max = 30
         agent = RandomAgent(env, tick_max)
@@ -41,10 +42,11 @@ if __name__ == "__main__":
 
     print("Action list:", action_lst)
     action_lst_len = len(action_lst) if action_lst else 1e8
+    print("Action list length:", action_lst_len)
 
     env = BaitEnv(level=level, render=True)
     env.reset()
-    for step in range(min(30, action_lst_len)):
+    for step in range(min(50, action_lst_len)):
         if action_lst:
             action_id = action_lst[step]
         else:
