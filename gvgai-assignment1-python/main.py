@@ -11,12 +11,12 @@ from controllers.MCTS import MCTSAgent
 if __name__ == "__main__":
     
     print("Game start!")
-    level = 1
+    level = 0
     env = BaitEnv(level=level, render=False)
     
     # actions: 0 noop, 1 left, 2 right, 3 down, 4 up
     
-    mode = "depthfirst" # "play", "random", "depthfirst", "limitdepthfirst", "Astar", "MCTS"
+    mode = "limitdepthfirst" # "play", "random", "depthfirst", "limitdepthfirst", "Astar", "MCTS"
     action_lst = None
     if mode == "play":
         # input your own actions here
