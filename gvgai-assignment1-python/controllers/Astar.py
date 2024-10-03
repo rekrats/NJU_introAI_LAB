@@ -22,6 +22,9 @@ class AstarNode:
             self.actionlist = []
             self.depth = 0
 
+    def __lt__(self, other):
+        return self.score < other.score
+
 class AstarAgent:
     def __init__(self, env, tick_max):
         self.env = env
@@ -57,7 +60,7 @@ class AstarAgent:
 
     def _open_node_search(self, node):
         for i in range(len(self.openlist)):
-            if self.state_equals(node.env._get_observation(), self.openlist[i][1].env._get_observation()):
+            if self.state_equals(node.env._get_observation(), self.openlist[i].env._get_observation()):
                 return i
         return -1
     
@@ -71,14 +74,16 @@ class AstarAgent:
 
     def astar(self):
         self.openlist = []
-        self.closedlist = self.have_reached
+        # use deepcopy, not use =, to avoid reference(to see in note)
+        self.closedlist = deepcopy(self.have_reached)
         rootnode = AstarNode(self.env)
         rootnode.score = self.get_node_score(rootnode)
-        heapq.heappush(self.openlist, (rootnode.score, rootnode))
+        heapq.heappush(self.openlist, rootnode)
         bestnode = rootnode
         bestscore = rootnode.score
         while len(self.openlist) > 0:
-            current = heapq.heappop(self.openlist)[1]
+            current = heapq.heappop(self.openlist)
+            # print("Current depth and score:", current.depth, current.score)           
             if current.depth > self.maxdepth:
                 continue
             self.closedlist.append(current.env._get_observation())
@@ -94,13 +99,17 @@ class AstarAgent:
                     continue
                 newnode = AstarNode(newenv, current, action)
                 newnode.score = self.get_node_score(newnode)
+                # print("New node score:", newnode.score)
+                if newnode.score < bestscore:
+                    bestnode = newnode
+                    bestscore = newnode.score
                 openindex = self._open_node_search(newnode)
                 if openindex == -1:
-                    heapq.heappush(self.openlist, (newnode.score, newnode))
+                    heapq.heappush(self.openlist, newnode)
                 else:
-                    if newnode.score < self.openlist[openindex][1].score:
-                        self.openlist[openindex] = (newnode.score, newnode)
-        assert bestnode is not None
+                    if newnode.score < self.openlist[openindex].score:
+                        self.openlist[openindex] = newnode
+        assert bestnode.actionlist is not None
         return bestnode.actionlist
                 
 
@@ -117,4 +126,5 @@ class AstarAgent:
         self.env = env;
         self.have_reached.append(self.env._get_observation())
         actionlist = self.astar();
+        print("Action list:", actionlist)
         return actionlist[0]
