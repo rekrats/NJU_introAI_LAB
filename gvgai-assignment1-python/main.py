@@ -11,7 +11,7 @@ from controllers.MCTS import MCTSAgent
 if __name__ == "__main__":
     
     print("Game start!")
-    level = 2
+    level = 3
     env = BaitEnv(level=level, render=False)
     
     # actions: 0 noop, 1 left, 2 right, 3 down, 4 up

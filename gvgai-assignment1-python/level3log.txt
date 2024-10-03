@@ -1,0 +1,95 @@
+Game start!
+Action list: None
+Action list length: 100000000.0
+Action list: [2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2]
+Step: 0, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 2]
+Step: 1, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 3, 3]
+Step: 2, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 3, 3]
+Step: 3, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [2, 3, 3, 3, 3, 2, 2, 2, 2, 3, 3]
+Step: 4, Action taken: 2, Reward: 1, Done: False, Info: {'message': 'Box fell into hole.'}
+Action list: [3, 3, 3, 3, 2, 2, 2, 2, 3, 3]
+Step: 5, Action taken: 3, Reward: 1, Done: False, Info: {'message': 'Box fell into hole.'}
+Action list: [3, 3, 3, 2, 2, 2, 2, 3, 3]
+Step: 6, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [3, 3, 2, 2, 2, 2, 3, 3]
+Step: 7, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [3, 2, 2, 2, 2, 3, 3]
+Step: 8, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [2, 2, 2, 2, 3, 3]
+Step: 9, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [2, 2, 2, 3, 3]
+Step: 10, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [2, 2, 3, 4, 2, 4, 4, 1, 3, 3, 3, 3, 3]
+Step: 11, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [2, 3, 4, 1, 1, 3, 2, 4, 2, 3, 3, 3]
+Step: 12, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [3, 4, 1, 1, 3, 2, 4, 2, 3, 3, 3]
+Step: 13, Action taken: 3, Reward: 1, Done: False, Info: {'message': 'Box fell into hole.'}
+Action list: [4, 1, 1, 3, 2, 4, 2, 3, 3, 3]
+Step: 14, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [1, 1, 3, 2, 4, 2, 3, 3, 3]
+Step: 15, Action taken: 1, Reward: 0, Done: False, Info: {}
+Action list: [1, 3, 2, 4, 2, 3, 3, 3]
+Step: 16, Action taken: 1, Reward: 0, Done: False, Info: {}
+Action list: [3, 2, 4, 2, 3, 3, 3]
+Step: 17, Action taken: 3, Reward: 1, Done: False, Info: {'message': 'Box fell into hole.'}
+Action list: [2, 4, 2, 3, 3, 3]
+Step: 18, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [4, 2, 3, 3, 3]
+Step: 19, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [2, 3, 3, 3]
+Step: 20, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [3, 3, 3]
+Step: 21, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [3, 4, 4, 2, 4, 4, 1, 3, 3, 3, 3, 3, 3]
+Step: 22, Action taken: 3, Reward: 1, Done: False, Info: {'message': 'Box fell into hole.'}
+Action list: [4, 4, 2, 4, 4, 1, 3, 3, 3, 3, 3, 3, 2]
+Step: 23, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4, 2, 4, 4, 1, 3, 3, 3, 3, 3, 3, 2]
+Step: 24, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [2, 4, 4, 1, 3, 3, 3, 3, 3, 3, 2]
+Step: 25, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [4, 4, 1, 3, 3, 3, 3, 3, 3, 2, 1, 4, 4]
+Step: 26, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4, 1, 3, 3, 3, 3, 3, 3, 2, 1, 4, 4, 4]
+Step: 27, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [1, 3, 3, 3, 3, 3, 3, 2, 1, 4, 4, 4, 4]
+Step: 28, Action taken: 1, Reward: 1, Done: False, Info: {'message': 'Box fell into hole.'}
+Action list: [3, 3, 3, 3, 3, 3, 2, 1, 4, 4, 4, 4, 2]
+Step: 29, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [3, 3, 3, 3, 3, 2, 1, 4, 4, 4, 4, 2, 4]
+Step: 30, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [3, 3, 3, 3, 2, 1, 4, 4, 4, 4, 2, 4, 4]
+Step: 31, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [3, 3, 3, 2, 1, 4, 4, 4, 4, 2, 4, 4, 4]
+Step: 32, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [3, 3, 2, 1, 4, 4, 4, 4, 2, 4, 4, 4, 4]
+Step: 33, Action taken: 3, Reward: 1, Done: False, Info: {'message': 'Box fell into hole.'}
+Action list: [3, 2, 1, 4, 4, 4, 4, 2, 4, 4, 4, 4]
+Step: 34, Action taken: 3, Reward: 0, Done: False, Info: {}
+Action list: [2, 1, 4, 4, 4, 4, 2, 4, 4, 4, 4]
+Step: 35, Action taken: 2, Reward: 0, Done: False, Info: {'message': 'Picked up key'}
+Action list: [1, 4, 4, 4, 4, 2, 4, 4, 4, 4]
+Step: 36, Action taken: 1, Reward: 0, Done: False, Info: {}
+Action list: [4, 4, 4, 4, 2, 4, 4, 4, 4]
+Step: 37, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4, 4, 4, 2, 4, 4, 4, 4]
+Step: 38, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4, 4, 2, 4, 4, 4, 4]
+Step: 39, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4, 2, 4, 4, 4, 4]
+Step: 40, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [2, 4, 4, 4, 4]
+Step: 41, Action taken: 2, Reward: 0, Done: False, Info: {}
+Action list: [4, 4, 4, 4]
+Step: 42, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4, 4, 4]
+Step: 43, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4, 4]
+Step: 44, Action taken: 4, Reward: 0, Done: False, Info: {}
+Action list: [4]
+Step: 45, Action taken: 4, Reward: 5, Done: True, Info: {'message': 'All goals completed. You win!'}
