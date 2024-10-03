@@ -11,7 +11,7 @@ from controllers.MCTS import MCTSAgent
 if __name__ == "__main__":
     
     print("Game start!")
-    level = 1
+    level = 2
     env = BaitEnv(level=level, render=False)
     
     # actions: 0 noop, 1 left, 2 right, 3 down, 4 up
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     env = BaitEnv(level=level, render=True)
     env.reset()
-    for step in range(min(50, action_lst_len)):
+    for step in range(min(100, action_lst_len)):
         if action_lst:
             action_id = action_lst[step]
         else:
