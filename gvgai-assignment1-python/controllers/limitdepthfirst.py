@@ -60,6 +60,8 @@ class LimitedDFSAgent:
 
     def limiteddfs(self):
         self.visited = []
+        # 单纯在每次搜索前清空visited，或者根本不做这件事情都有缺陷
+        # 这个问题应该在 Astar 的时候修一下。
         self.tick = 0
         root_state = self.env._get_observation()
         root_node = LDFSNode(self.env)
