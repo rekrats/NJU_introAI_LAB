@@ -79,11 +79,6 @@ class LimitedDFSAgent:
             if node.depth > self.maxdepth:
                 continue
             if node.depth == self.maxdepth:
-                score = node.score
-                # print("now node score", score)
-                if score < best_score:
-                    best_score = score
-                    best_node = node
                 continue
             for action in D_ACTIONS:
                 newenv = deepcopy(node.env)
@@ -99,6 +94,9 @@ class LimitedDFSAgent:
                 self.visited.append(obs_)
                 newnode = LDFSNode(newenv, node, action)
                 newnode.score = self.get_node_score(newnode)
+                if newnode.score < best_score:
+                    best_score = newnode.score
+                    best_node = newnode
                 sstack.append(newnode)
         assert best_node is not None
         return best_node.actionlist
