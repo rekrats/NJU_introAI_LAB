@@ -31,7 +31,7 @@ class AstarAgent:
         self.tick_max = tick_max
         self.tick = 0
         # Your can add new attributes if needed
-        self.maxdepth = 12 # level1: 15 level2: 25 level3: 28
+        self.maxdepth = 15 # level1: 15 level2: 25 level3: 28
         self.have_reached = [] # Agent 真正走到过的状态
         self.openlist = [] # 优先队列
         self.closedlist = [] # 在每次搜索开始，应当被重置为 have_reached

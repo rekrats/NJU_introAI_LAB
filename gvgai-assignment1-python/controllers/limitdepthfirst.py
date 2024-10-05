@@ -27,7 +27,7 @@ class LimitedDFSAgent:
         self.tick_max = tick_max
         self.tick = 0
         # Your can add new attributes if needed
-        self.maxdepth = 4 # Maximum depth of the search tree
+        self.maxdepth = 4 # level0: 4
         self.visited = []
         self.map = self.env.map
         self.goalpos = None
@@ -74,8 +74,6 @@ class LimitedDFSAgent:
         while len(sstack) > 0:
             node = sstack.pop()
             # print("now node depth", node.depth)
-            if self.tick > self.tick_max:
-                break
             if node.depth > self.maxdepth:
                 continue
             if node.depth == self.maxdepth:
@@ -113,4 +111,5 @@ class LimitedDFSAgent:
     def act(self, env):
         self.env = env
         action_list = self.limiteddfs()
+        print("Action list:", action_list)
         return action_list[0]
