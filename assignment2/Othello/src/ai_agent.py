@@ -177,9 +177,9 @@ def evaluate_game_state(game):
     # Evaluation weights for different factors
     coin_parity_weight = 1.0
     mobility_weight = 2.0
-    corner_occupancy_weight = 5.0
+    corner_occupancy_weight = 10.0
     stability_weight = 3.0
-    edge_occupancy_weight = 2.5
+    edge_occupancy_weight = 4.0
 
     # Coin parity (difference in disk count)
     player_disk_count = sum(row.count(game.current_player) for row in game.board)
