@@ -14,6 +14,7 @@ def get_best_move(game, max_depth=6):
         tuple: A tuple containing the evaluation value of the best move and the corresponding move (row, col).
     """
     _, best_move = minmax_decider(game, max_depth)
+    # _, best_move = alphabeta_decider(game, max_depth)
     # _, best_move = mtd_f(game, 0, max_depth)
     return best_move
 
@@ -81,8 +82,49 @@ def alphabeta_decider(
     """
     MinMax Decider algorithm for selecting the best move for the AI player.
     """
-    # Your implementation for Alpha beta pruning
-    pass
+    if max_depth == 0 or game.is_game_over():
+        return evaluate_game_state(game), None
+
+    valid_moves = game.get_valid_moves()
+
+    if maximizing_player:
+        alpha_value = alpha
+        best_move = None
+
+        for move in valid_moves:
+            new_game = OthelloGame(player_mode=game.player_mode)
+            new_game.board = [row[:] for row in game.board]
+            new_game.current_player = game.current_player
+            new_game.make_move(*move)
+
+            alpha_, _ = alphabeta_decider(new_game, max_depth - 1, False, alpha_value, beta)
+
+            if alpha_ > alpha_value:
+                alpha_value = alpha_
+                best_move = move
+            if alpha_value >= beta:
+                break
+
+        return alpha_value, best_move
+    else:
+        beta_value = beta
+        best_move = None
+
+        for move in valid_moves:
+            new_game = OthelloGame(player_mode=game.player_mode)
+            new_game.board = [row[:] for row in game.board]
+            new_game.current_player = game.current_player
+            new_game.make_move(*move)
+
+            beta_, _ = alphabeta_decider(new_game, max_depth - 1, True, alpha, beta_value)
+
+            if beta_ < beta_value:
+                beta_value = beta_
+                best_move = move
+            if beta_value <= alpha:
+                break
+
+        return beta_value, best_move
 
 
 def mtd_f(game, guess, max_depth):
