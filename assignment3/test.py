@@ -2,20 +2,26 @@ import sys
 import pygame
 import pickle
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
 
 from play import AliensEnvPygame
 from learn import extract_features
 
 def main():
 
-    clf = RandomForestClassifier(n_estimators=100)
+    # clf = RandomForestClassifier(n_estimators=100)
+    # clf = KNeighborsClassifier(n_neighbors=10)
+    # clf = SVC(kernel='linear')
+    clf = GaussianNB()
 
     pygame.init()
 
     env = AliensEnvPygame(level=0, render=False)
 
     # 加载模型
-    model_path = 'logs\game_records_lvl0_2024-xx-xx_xx-xx-xx\gameplay_model.pkl' # 替换为你的模型的路径
+    model_path = 'trained_models\GuessNB_easyextract_lv0\gameplay_model.pkl' # 替换为你的模型的路径
     with open(model_path, 'rb') as f:
         clf = pickle.load(f)
 
