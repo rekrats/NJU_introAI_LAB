@@ -1,0 +1,4 @@
+imageio
+pillow
+pygame
+scikit-learn
