@@ -39,10 +39,13 @@ def extract_features(observation):
     return np.array(features)
 
 def main():
-    data_list = [
-        # 'game_records_lvl0_2024-xx-xx_xx-xx-xx', # 修改路径为你的数据
-        # 'game_records_lvl0_2024-yy-yy_yy-yy-yy',
-    ]
+    data_list = []
+
+    with open('./logs/folders_list.txt', 'r') as f:
+        for line in f: 
+            line = line.strip()
+            data_list.append(line)
+    
     data = []
     for data_load in data_list:
         with open(os.path.join('logs', data_load, 'data.pkl'), 'rb') as f:
