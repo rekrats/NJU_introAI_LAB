@@ -5,4 +5,4 @@ __pycache__
 figs/
 logs/
 trained_models/
-_MACOSX
+__MACOSX
